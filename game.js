@@ -5,7 +5,7 @@ $('#guess').focus(function () {
 		$(this).val("");
 	}
 }).blur(function () {
-	if ($(this).val() == "") {
+	if ($(this).val() === "") {
 		$(this).val($(this).attr("value"));
 	}
 });
@@ -33,7 +33,7 @@ $('#guess').focus(function () {
 
     function game() {
         var guess = parseInt($('#guess').val());
-        if (guess !== null && $.isNumeric(guess) && (1 < guess < 101)) {
+        if (guess !== null && $.isNumeric(guess) && (guess < 101) && (guess > 0)) {
             $('#guess').val('');
             numberOfGuesses += 1;
             guesses.push(guess);
@@ -70,12 +70,12 @@ $('#guess').focus(function () {
                     } else if (guess < answer) {
                         $('#hint').html('You\'re on fire, guess HIGHER! Last guess: ' + guess);
                     }
-            } else {
-                $('#hint').html('ERROR: Your guess must be a number between 1 and 100').css({
-                    color: 'red'
-                });
-            }
-        }
+} 
+}
+        } else {
+        $('#hint').html('ERROR: Your guess must be a number between 1 and 100').css({
+            color: 'red'
+            });
         }
         $('#newgame').click(function (e) {
             e.preventDefault();
