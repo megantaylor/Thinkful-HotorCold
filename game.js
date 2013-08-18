@@ -40,35 +40,53 @@ $('#guess').focus(function () {
             distance = Math.abs(answer - guess);
             previousDistance = Math.abs(answer - guesses[guesses.length - 2]);
             if (guess === answer) {
-                $('#hint').html('Congrats! You got it in ' + numberOfGuesses + ' guesses! The secret number was ' + answer +"!");
+                $('#hint').html('Congrats! You got it in ' + numberOfGuesses + ' guesses! The secret number was ' + answer +"!").css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
             } else {
                 console.log(guess, answer, previousDistance, distance);
                 if (isNaN(previousDistance)) {
                     if (guess > answer) {
-                        $('#hint').html('Guess lower! Last guess: ' + guess);
+                        $('#hint').html('Guess lower! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     } else if (guess < answer) {
-                        $('#hint').html('Guess higher! Last guess: ' + guess);
+                        $('#hint').html('Guess higher! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     }
 
                 } else if (distance > previousDistance) {
                     $('body').css("background-color", "#3399FF");
                     if (guess > answer) {
-                        $('#hint').html('You\'re getting colder, guess LOWER! Last guess: ' + guess);
+                        $('#hint').html('You\'re getting colder, guess LOWER! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     } else if (guess < answer) {
-                        $('#hint').html('You\'re getting colder, guess HIGHER! Last guess: ' + guess);
+                        $('#hint').html('You\'re getting colder, guess HIGHER! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     }
                 } else if (distance < previousDistance) {
                     $('body').css("background-color", "#CC0000");
                     if (guess > answer) {
-                        $('#hint').html('You\'re getting hotter, guess LOWER! Last guess: ' + guess);
+                        $('#hint').html('You\'re getting hotter, guess LOWER! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     } else if (guess < answer) {
-                        $('#hint').html('You\'re getting hotter, guess HIGHER! Last guess: ' + guess);
+                        $('#hint').html('You\'re getting hotter, guess HIGHER! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     }
                 } else if (distance === previousDistance) {
                     if (guess > answer) {
-                        $('#hint').html('You\'re on fire, guess LOWER! Last guess: ' + guess);
+                        $('#hint').html('You\'re on fire, guess LOWER! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     } else if (guess < answer) {
-                        $('#hint').html('You\'re on fire, guess HIGHER! Last guess: ' + guess);
+                        $('#hint').html('You\'re on fire, guess HIGHER! Last guess: ' + guess).css({
+            color: 'rgba(0, 0, 0, 0.698)'
+            });
                     }
 } 
 }
