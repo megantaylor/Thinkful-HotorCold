@@ -9,7 +9,7 @@ To build this game, you should use functions, conditionals, random numbers, and 
 2. Once you’ve got a working version, push it to Github (and host a version on Github pages) and a share it with your mentor and classmates to get feedback.
 
 3. If you're feeling adventurous, consider adding the following additional features to make the game even more fun:
-	*Using another correctly scoped variable, iteratively track the user's previous guess in order to let them know if they are getting “hotter” or “colder”.
-        *“prompt()” and “alert()” don’t make for a great user experience, do they? Create an HTML-based interface to replace them. This would reuse some of the ideas introduced in Section 1 of this Unit.
-        *If you’re more visual, you can add animations using jQuery.
+    * Using another correctly scoped variable, iteratively track the user's previous guess in order to let them know if they are getting “hotter” or “colder”.
+    * “prompt()” and “alert()” don’t make for a great user experience, do they? Create an HTML-based interface to replace them. This would reuse some of the ideas introduced in Section 1 of this Unit.
+    * If you’re more visual, you can add animations using jQuery.
 
