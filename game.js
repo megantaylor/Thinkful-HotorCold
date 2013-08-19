@@ -17,6 +17,7 @@ $('#guess').focus(function () {
     console.log("The secret number is: " + answer);
     var numberOfGuesses = 0;
     var guesses = [];
+    guesses.length = 0;
     var distance = null;
     var previousDistance = null;
 
@@ -34,15 +35,20 @@ $('#guess').focus(function () {
     function game() {
         var guess = parseInt($('#guess').val());
         if (guess !== null && $.isNumeric(guess) && (guess < 101) && (guess > 0)) {
-            $('#guess').val('');
+            $('#guess').val('Guess a number...');
             numberOfGuesses += 1;
+            if ($.inArray(guess,guesses) > -1) {
+            	 $('body').css("background-color", "#222");
+            	 $('#error').html('ERROR: You guessed that number already. Please try a new number.');
+          } else {
             guesses.push(guess);
             distance = Math.abs(answer - guess);
             previousDistance = Math.abs(answer - guesses[guesses.length - 2]);
+            $('#error').html('');
             if (guess === answer) {
+                $('body').css("background-color", "#CC0000");
                 $('#hint').html('Congrats! You got it in ' + numberOfGuesses + ' guesses! The secret number was ' + answer +"!");
             } else {
-                console.log(guess, answer, previousDistance, distance);
                 if (isNaN(previousDistance)) {
                     if (guess > answer) {
                         $('#hint').html('Guess lower! Last guess: ' + guess);
@@ -72,22 +78,22 @@ $('#guess').focus(function () {
                     }
 } 
 }
+}
         } else {
-        $('#hint').html('ERROR: Your guess must be a number between 1 and 100').css({
-            color: 'red'
-            });
+        $('#error').html('ERROR: Your guess must be a number between 1 and 100');
         }
         $('#newgame').click(function (e) {
             e.preventDefault();
             $('body').css("background-color", "#222");
             answer = Math.floor((Math.random() * 100) + 1);
-            console.log(answer);
+            console.log("The secret number is: " + answer);
             numberOfGuesses = 0;
-            guesses = [];
+            guesses.length = 0;
             distance = null;
             previousDistance = null;
             $('#hint').html('');
-            $('#guess').val('');
+            $('#error').html('');
+            $('#guess').val('Guess a number...');
         });
     }
     });
