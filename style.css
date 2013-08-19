@@ -16,6 +16,14 @@ body {
   box-shadow:         3px 3px 5px 6px #000;
 }
 
+.hot {
+color: #CC0000;
+}
+
+.cold {
+color:#3399FF;
+}
+
 ul {
     list-style-type:none;
     list-style-position:outside;
