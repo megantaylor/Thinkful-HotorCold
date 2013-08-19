@@ -28,9 +28,8 @@ li{
     text-align:center;
 }
 
-li#hint{
-    border-bottom:1px solid #eee;
-    border-top:1px solid #eee;
+li#error{
+color: red;
 }
 
 input#guess {
